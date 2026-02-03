@@ -7,7 +7,7 @@ The site showcases my work as a **Web Developer and Digital Accessibility Specia
 ## 🌐 Live Site
 [https://yourdomain.com](https://yourdomain.com)
 
-## 🧩 What’s Included
+## What’s Included
 - Featured professional projects and case studies  
 - Accessibility-focused design and development approach  
 - Campaign and thought leadership highlights  
@@ -19,7 +19,7 @@ The site showcases my work as a **Web Developer and Digital Accessibility Specia
 - **Styling:** Custom CSS (responsive and accessible-first)  
 - **Deployment:** Netlify  
 
-## ♿ Accessibility Commitment
+## Accessibility Commitment
 Accessibility is not an add-on — it is a foundation of this site.
 
 The portfolio is built with:
@@ -28,10 +28,10 @@ The portfolio is built with:
 - Screen reader-friendly patterns  
 - WCAG-informed color contrast and interaction design  
 
-## 📄 Resume
+## Resume
 My resume is available directly on the site.
 
-## 📬 Contact
+## Contact
 - GitHub: https://github.com/ofasida  
 - LinkedIn: https://linkedin.com/in/olamidefasida  
 
