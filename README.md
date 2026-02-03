@@ -1,43 +1,40 @@
-# Astro Starter Kit: Minimal
+# Olamide Fasida — Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This repository contains the source code for my personal portfolio website.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site showcases my work as a **Web Developer and Digital Accessibility Specialist**, including professional projects, accessibility-focused case studies, and public-facing initiatives related to inclusive design and assistive technology.
 
-## 🚀 Project Structure
+## 🌐 Live Site
+[https://yourdomain.com](https://yourdomain.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧩 What’s Included
+- Featured professional projects and case studies  
+- Accessibility-focused design and development approach  
+- Campaign and thought leadership highlights  
+- Responsive, accessible UI built with modern web standards  
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🛠 Tech Stack
+- **Framework:** Astro  
+- **Languages:** HTML, CSS, JavaScript  
+- **Styling:** Custom CSS (responsive and accessible-first)  
+- **Deployment:** Netlify  
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ♿ Accessibility Commitment
+Accessibility is not an add-on — it is a foundation of this site.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The portfolio is built with:
+- Semantic HTML structure  
+- Keyboard-accessible navigation  
+- Screen reader-friendly patterns  
+- WCAG-informed color contrast and interaction design  
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📄 Resume
+My resume is available directly on the site.
 
-## 🧞 Commands
+## 📬 Contact
+- GitHub: https://github.com/ofasida  
+- LinkedIn: https://linkedin.com/in/olamidefasida  
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2026 Olamide Fasida
