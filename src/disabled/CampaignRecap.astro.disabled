@@ -1,0 +1,177 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "LinkedIn Accessibility Awareness Campaign (8 Weeks)";
+const description =
+  "Campaign recap by Olamide Fasida highlighting an 8-week LinkedIn initiative focused on practical digital accessibility education.";
+
+// Correct LinkedIn profile URL format:
+const campaignUrl = "https://www.linkedin.com/in/olamidefasida/";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Campaign Header (matches AIM layout) -->
+  <header class="container section" aria-labelledby="cs-title" style="border-top: 0;">
+
+    <h1 id="cs-title" class="hero-title">
+      LinkedIn Accessibility Awareness Campaign (8 Weeks)
+    </h1>
+
+    <p class="hero-sub">
+      <strong>Project:</strong> LinkedIn Accessibility Awareness Campaign
+      <br />
+      <strong>Focus:</strong> Weekly accessibility tips for real-world application
+    </p>
+<br>
+    <div class="hero-cta" role="group" aria-label="Campaign actions">
+      <a class="btn" href={campaignUrl} target="_blank" rel="noreferrer">
+        View campaign on LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- 1. Overview -->
+    <section class="section" aria-labelledby="overview-title">
+      <h2 id="overview-title">1. Overview</h2>
+
+      <p class="lead">
+        This 8-week initiative was designed to build professional credibility and educate my
+        network on the essentials of digital accessibility.
+      </p>
+
+      <p>
+        Each week, I broke down a technical pillar, including color contrast, alt-text, keyboard
+        navigation, and inclusive design, into actionable tips that professionals could immediately
+        apply to their digital products.
+      </p>
+    </section>
+
+    <!-- 2. The Challenge -->
+    <section class="section" aria-labelledby="challenge-title">
+      <h2 id="challenge-title">2. The Challenge: Turning Awareness Into Action</h2>
+
+      <p class="lead">
+        Accessibility guidance is often presented as dense standards documentation, which can make it
+        difficult for teams to apply in day-to-day product work.
+      </p>
+
+      <p>
+        The goal was to translate complex compliance topics into simple, practical steps that
+        developers, designers, and decision-makers could use immediately.
+      </p>
+    </section>
+
+    <!-- 3. The Solution -->
+    <section class="section" aria-labelledby="solution-title">
+      <h2 id="solution-title">3. The Solution: Weekly Pillars With Practical Tips</h2>
+
+      <p class="lead">
+        The campaign used a weekly format to deliver a focused accessibility topic with clear actions
+        and an approachable tone.
+      </p>
+
+      <h3>What the campaign covered</h3>
+      <ul class="list">
+        <li>
+          <strong>Color contrast:</strong> How to check contrast and avoid low-contrast design decisions.
+        </li>
+        <li>
+          <strong>Alt-text:</strong> How to write meaningful alternative text that communicates purpose.
+        </li>
+        <li>
+          <strong>Keyboard navigation:</strong> How to ensure users can operate interfaces without a mouse.
+        </li>
+        <li>
+          <strong>Inclusive design:</strong> How to build with diverse users in mind from the start.
+        </li>
+      </ul>
+
+      <p>
+        The campaign utilized accessible visuals and beginner-friendly prompts to turn awareness into
+        action.
+      </p>
+    </section>
+
+    <!-- 4. Standards + Messaging -->
+    <section class="section" aria-labelledby="standards-title">
+      <h2 id="standards-title">4. Standards and Messaging</h2>
+
+      <p class="lead">
+        By translating standards into real-world guidance, the campaign reinforced that accessibility
+        is the foundation of great digital experiences, not an optional feature.
+      </p>
+
+      <p>
+        The campaign referenced <strong>WCAG, ADA, and Section 508</strong> in a way that supported
+        practical implementation rather than overwhelming readers with compliance language.
+      </p>
+    </section>
+
+    <!-- 5. Impact -->
+    <section class="section" aria-labelledby="impact-title">
+      <h2 id="impact-title">5. Impact</h2>
+
+      <p class="lead">
+        This project demonstrated my ability to lead technical conversations and communicate high-level
+        compliance standards to a broad audience.
+      </p>
+
+      <ul class="list">
+        <li>
+          <strong>Education:</strong> Reduced complexity by focusing each week on one clear topic and action.
+        </li>
+        <li>
+          <strong>Consistency:</strong> Built trust through a repeatable weekly structure.
+        </li>
+        <li>
+          <strong>Professional credibility:</strong> Showcased accessibility expertise through practical guidance.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. Embedded post -->
+    <section class="section" aria-labelledby="linkedin-embed-title">
+      <h2 id="linkedin-embed-title">6. Campaign Example Post</h2>
+
+      <p class="lead">
+        Below is an example post from the LinkedIn Accessibility Awareness Campaign.
+      </p>
+
+      <div class="card linkedin-embed" role="region" aria-label="Embedded LinkedIn post">
+        <iframe
+          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7402712720132956162?collapsed=1"
+          title="LinkedIn campaign post example"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+
+        <p class="muted" style="margin-top: 12px;">
+          <a
+            href="https://www.linkedin.com/feed/update/urn:li:share:7402712720132956162"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View this campaign post on LinkedIn
+          </a>
+          <span class="visually-hidden"> (opens in a new tab)</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer links (matches AIM layout) -->
+    <section class="section" aria-labelledby="links-title">
+      <h2 id="links-title">Project Links</h2>
+
+      <div class="card-links">
+        <a href={campaignUrl} target="_blank" rel="noreferrer">
+          View campaign on LinkedIn
+        </a>
+        <a href="/#projects">
+          Back to portfolio
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

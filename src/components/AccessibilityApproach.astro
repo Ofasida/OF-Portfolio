@@ -1,0 +1,59 @@
+---
+const intro =
+  "Accessibility isn’t a final checklist, it’s the foundation of how I build. My approach focuses on long-term usability, compliance, and scale.";
+
+const pillars = [
+  {
+    title: "Accessibility as a foundation",
+    body:
+      "I design and develop with accessibility in mind from the very first decision, ensuring inclusive experiences are the foundation of every project.",
+    points: [
+      "Semantic HTML and clear information structure",
+      "Keyboard first interaction patterns",
+      "Readable typography and color contrast safe choices",
+      "Accessible forms, errors, and focus management",
+    ],
+  },
+  {
+    title: "Built for scale and reliability",
+    body:
+      "I specialize in supporting and modernizing platforms used by real users at scale, collaborating with cross-functional teams to keep systems reliable and compliant.",
+    points: [
+      "Alignment with WCAG, ADA, and Section 508 standards",
+      "Maintaining and improving existing systems",
+      "Clear documentation and shared patterns",
+      "Collaboration with stakeholders and technical teams",
+    ],
+  },
+  {
+    title: "Looking ahead with AI and automation",
+    body:
+      "I’m exploring how AI and automation can support accessibility testing and data analysis inhelping teams catch issues earlier and make smarter decisions faster.",
+    points: [
+      "Automated scans as early signals (paired with manual verification)",
+      "Analytics-driven usability improvements",
+      "Reducing manual overhead while improving coverage",
+    ],
+  },
+];
+
+---
+
+<section id="accessibility-approach" class="container section" aria-labelledby="accessibility-title">
+  <div class="section-head">
+    <h2 id="accessibility-title">Accessibility Approach</h2>
+    <p class="muted">{intro}</p>
+  </div>
+
+  <div class="grid three">
+    {pillars.map((pillar) => (
+      <article class="card">
+        <h3 class="card-title">{pillar.title}</h3>
+        <p>{pillar.body}</p>
+        <ul class="list">
+          {pillar.points.map((p) => <li>{p}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>

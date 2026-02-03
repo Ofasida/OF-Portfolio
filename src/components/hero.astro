@@ -1,0 +1,41 @@
+---
+const NAME = "Olamide Fasida";
+const RESUME_URL = "/public/resume/O-Fasida-Resume.pdf";
+---
+
+
+<section class="container hero" aria-labelledby="hero-title">
+  <h1 id="hero-title" class="hero-title">
+    Engineering Meaningful Tech
+  </h1>
+
+  <p class="hero-sub">
+    I’m {NAME}, a Web Developer and Digital Accessibility Specialist. With a background in software engineering,
+    I bridge technical development, user-centered design, and accessibility compliance to build digital experiences
+    people can rely on.
+  </p>
+
+  <!-- Hero Navigation Buttons -->
+  <nav class="hero-nav" aria-label="Primary actions">
+    <a class="btn" href="#projects">View Projects</a>
+
+    <a
+      class="btn"
+      href={RESUME_URL}
+      target="_blank"
+      rel="noopener"
+    >
+      Resume
+      <span class="visually-hidden">(opens in a new tab)</span>
+    </a>
+
+    <a class="btn" href="#accessibility-approach">Accessibility Approach</a>
+
+    <a class="btn" href="#skills">Skills</a>
+
+    <a class="btn" href="/About">About</a>
+
+    <a class="btn" href="#contact">Contact</a>
+
+  </nav>
+</section>

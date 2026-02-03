@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "About — Olamide Fasida";
+const description =
+  "About Olamide Fasida, Web Developer and Digital Accessibility Specialist.";
+
+// About content (same as previously discussed)
+const aboutSummary =
+  "I’m a Web Developer and Digital Accessibility Specialist dedicated to building inclusive, high-performance digital experiences. With a background in software engineering, I bridge the gap between technical development, user-centered design, and strict accessibility compliance.";
+
+const currentRole =
+  "Currently, I serve as a Technology Management Specialist, managing large-scale systems for educators, researchers, and statewide programs. I don’t just build for aesthetics; I build for reliability and universal access.";
+
+const whatIDo = [
+  {
+    label: "Development",
+    text: "Expert in HTML, CSS, JavaScript, and platforms like WordPress, Webflow, and HubSpot.",
+  },
+  {
+    label: "Accessibility",
+    text: "Rooted in WCAG, ADA, and Section 508 standards—ensuring technology works for everyone from the first line of code.",
+  },
+  {
+    label: "Data-Driven Design",
+    text: "I use analytics to identify friction points and refine user journeys, turning behavioral data into actionable improvements.",
+  },
+];
+
+const approachBullets = [
+  "Accessibility isn’t a final checklist, it’s my foundation.",
+  "I specialize in supporting platforms at scale, collaborating with cross-functional teams to maintain and modernize existing systems.",
+  "I’m exploring how AI and automation can streamline accessibility testing and data insights to keep digital experiences ahead of the curve.",
+];
+
+const goalLine =
+  "My goal is simple: to build ethical, usable technology that people can actually rely on.";
+
+// Update these paths
+const headshotSrc = "/images/ofasida_img.jpg";
+const headshotAlt = "Headshot of Olamide Fasida";
+
+// Audio pronunciation file (your exact filename)
+const pronunciationSrc = "/audio/Olamide-Fasida-Pronounciation.mp3";
+---
+
+<BaseLayout title={title} description={description} showPageNav={false}>
+  <main id="main">
+    <section id="About" class="container section" aria-labelledby="about-title" style="border-top: 0;">
+      <div class="section-head">
+        <h1 id="about-title" class="hero-title">About Me</h1>
+      </div>
+
+      <!-- Intro + Photo -->
+      <div class="about-page-grid">
+        <div>
+          <p class="lead">{aboutSummary}</p>
+          <p>{currentRole}</p>
+          <p class="goal"><strong>{goalLine}</strong></p>
+        </div>
+    <aside class="card" aria-label="Profile photo">
+     <figure class="profile-figure">
+      <img
+       src={headshotSrc}
+       alt={headshotAlt}
+       class="profile-img"
+       loading="lazy"
+       decoding="async"
+       />
+ 
+      <figcaption class="profile-caption">
+        <p>Software Engineer since 2023.</p>
+      </figcaption>
+</figure>
+    </aside>
+      </div>
+
+ <!-- Name Pronunciation (styled button) -->
+<section class="card" aria-labelledby="name-pronunciation-title" style="margin-top: 16px;">
+  <h2 id="name-pronunciation-title" class="card-title">How to pronounce my name</h2>
+
+  <p class="muted" id="name-pronunciation-desc">
+    Select the button below to hear how to pronounce my name “Olamide Fasida.”
+    A text pronunciation is provided.
+  </p>
+
+<div class="btn"
+  id="play-pronunciation"
+  aria-describedby="name-pronunciation-desc pronunciation-status">
+
+  <span class="btn-icon" aria-hidden="true">▶</span>
+  <span class="btn-label">Play</span>
+</div>
+
+  <audio id="name-audio" preload="none">
+    <source src={pronunciationSrc} type="audio/mpeg" />
+  </audio>
+
+  <span id="pronunciation-status" class="visually-hidden" aria-live="polite"></span>
+
+  <p class="muted" style="margin-top: 10px;">
+    <strong>Pronunciation:</strong>
+    <span aria-label="oh-lah-mee-day fa-see-dah">oh-LAH-mee-day fa-SEE-dah</span>
+  </p>
+</section>
+
+      <!-- What I do -->
+      <section class="card" aria-label="What I do" style="margin-top: 16px;">
+        <h2 class="card-title" style="margin-bottom: 10px;">What I do</h2>
+
+        <dl class="rows">
+          {whatIDo.map((item) => (
+            <div class="row">
+              <dt class="row-label">{item.label}</dt>
+              <dd class="row-text">{item.text}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <!-- My approach -->
+      <section class="card approach" aria-label="My approach" style="margin-top: 16px;">
+        <h2 class="card-title">My approach</h2>
+        <ul class="list">
+          {approachBullets.map((b) => <li>{b}</li>)}
+        </ul>
+      </section>
+    </section>
+  </main>
+
+<script is:inline>
+  const playBtn = document.getElementById("play-pronunciation");
+  const audio = document.getElementById("name-audio");
+  const status = document.getElementById("pronunciation-status");
+
+  const setPlayState = () => {
+    playBtn.querySelector(".btn-icon").textContent = "▶";
+    playBtn.querySelector(".btn-label").textContent = "Play Pronunciation";
+    playBtn.setAttribute("aria-label", "Play name Pronunciation");
+  };
+
+  const setReplayState = () => {
+    playBtn.querySelector(".btn-icon").textContent = "↻";
+    playBtn.querySelector(".btn-label").textContent = "Replay Pronunciation";
+    playBtn.setAttribute("aria-label", "Replay name Pronunciation");
+  };
+
+  playBtn.addEventListener("click", async () => {
+    try {
+      audio.currentTime = 0;
+      await audio.play();
+      status.textContent = "Playing name pronunciation.";
+    } catch (error) {
+      status.textContent = "Unable to play audio.";
+    }
+  });
+
+  audio.addEventListener("ended", () => {
+    status.textContent = "Pronunciation finished.";
+    setReplayState();
+  });
+
+  setPlayState();
+</script>
+</BaseLayout>

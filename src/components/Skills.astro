@@ -1,0 +1,76 @@
+---
+const skillGroups = [
+  {
+    title: "Front-End Development",
+    items: [
+      "HTML5, CSS3, JavaScript",
+      "Responsive and mobile-first design",
+      "Component-based layouts",
+      "Cross-browser compatibility",
+      "Performance optimization",
+      "UI and UX fundamentals",
+      "Content-driven development",
+      "Semantic document structure",
+    ],
+  },
+  {
+    title: "Digital Accessibility",
+    items: [
+      "WCAG 2.1 and 2.2 compliance",
+      "ADA and Section 508 standards",
+      "Keyboard navigation and focus management",
+      "Accessible forms and error handling",
+      "Screen reader testing (NVDA, VoiceOver)",
+      "Color contrast analysis",
+      "Accessibility auditing and remediation",
+      "Platform-aware accessibility for no-code and low-code environments",
+    ],
+  },
+  {
+    title: "Data and Analytics",
+    items: [
+      "Google Analytics 4 and Tag Manager",
+      "User journey and engagement analysis",
+      "YouTube analytics for content performance",
+      "Data reporting and visualization",
+      "Excel for stakeholder reporting and insights",
+    ],
+  },
+  {
+    title: "Platforms and Tools",
+    items: [
+      "WordPress, Webflow, HubSpot",
+      "Camtasia for accessible video production",
+      "Version control with Git",
+      "Accessibility testing tools (axe, WAVE)",
+    ],
+  },
+];
+
+const makeId = (title) =>
+  `skills-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+---
+
+<section id="skills" class="container section" aria-labelledby="skills-title">
+  <div class="section-head">
+    <h2 id="skills-title">Skills</h2>
+    <p class="muted">
+      A focused mix of front-end development, accessibility, and data-driven decision-making.
+    </p>
+  </div>
+
+  <div class="grid skills-grid">
+    {skillGroups.map((group) => {
+      const headingId = makeId(group.title);
+
+      return (
+        <article class="card" aria-labelledby={headingId}>
+          <h3 id={headingId} class="card-title">{group.title}</h3>
+          <ul class="list">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      );
+    })}
+  </div>
+</section>

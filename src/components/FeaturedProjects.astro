@@ -1,0 +1,121 @@
+---
+const projects = [
+  {
+    title: "Accessible Instructional Materials (AIM): Educational Resource Site",
+    type: "Professional Work",
+    platform: "Google Sites",
+    description:
+      "Resource site built independently to support accessible instructional materials. Designed with a content first structure and accessibility focused patterns for clarity and discoverability.",
+    highlights: [
+      "Structured content with clear headings and scannable layout",
+      "Built to help educators and stakeholders find resources quickly",
+      "Designed for accessible navigation and readable presentation",
+    ],
+    links: [
+      {
+        label: "View Site",
+        href: "https://sites.google.com/view/accessible-instruct-materials/aim",
+      },
+    ],
+  },
+
+  {
+    title: "Technology and Learning Connections: Public Platform",
+    type: "Professional Work",
+    platform: "Without Code",
+    description:
+      "Public-facing platform supporting educators and statewide programs. Built collaboratively with a team member; ongoing maintenance and updates are handled continuously to keep the site reliable and accessible.",
+    highlights: [
+      "Ongoing maintenance, updates, and content reliability improvements",
+      "Accessibility checks and remediation for consistent quality",
+      "Supports multiple statewide education initiatives",
+    ],
+    links: [
+      { label: "View Site", href: "https://www.tlc-mtss.com/" },
+    ],
+  },
+
+  {
+    title: "Passport to Learning: Database-Backed Program System",
+    type: "Professional Work",
+    platform: "Caspio",
+    description:
+      "Public-facing program page supported by an authenticated Caspio database system. The system powers data collection, workflows, and reporting for a statewide education initiative.",
+    highlights: [
+      "Database-driven workflows built with Caspio",
+      "Authenticated system with role-based access controls",
+      "Supports program tracking and reporting at scale",
+    ],
+    links: [
+      {
+        label: "View Site", href: "https://www.tlc-mtss.com/passport",
+      },
+    ],
+  },
+
+  {
+    title: "Accessibility Awareness Campaign",
+    type: "Thought Leadership",
+    platform: "LinkedIn",
+    description:
+      "Accessibility awareness campaign highlighting practical web accessibility tips, why they matter, and how teams can implement improvements that make digital experiences usable for everyone.",
+    highlights: [
+      "Weekly tips focused on practical fixes (forms, contrast, headings, keyboard)",
+      "Free tools to help teams take immediate action",
+      "Built to support awareness and real implementation, not just theory",
+    ],
+    links: [
+      {label: "LinkedIn", href: "https://www.linkedin.com/posts/olamidefasida_accessibility-a11y-inclusivedesign-activity-7382055996803670017-6234?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcvIVoBThZVe_oWR7wa_2sm3IR21wMwZLs",}
+    ],
+  },
+];
+
+const makeId = (text) =>
+  `proj-${text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+---
+
+<section id="projects" class="container section" aria-labelledby="projects-title">
+  <div class="section-head">
+    <h2 id="projects-title">Featured Projects</h2>
+    <p class="muted">
+      Professional web design, Accessibility, Assistive Technology focused resources, and Public advocacy.
+    </p>
+  </div>
+
+  <div class="grid projects-grid">
+    {projects.map((p) => {
+      const titleId = makeId(p.title);
+
+      return (
+        <article class="card project-card" aria-labelledby={titleId}>
+          <div class="project-top">
+            <h3 id={titleId} class="card-title">{p.title}</h3>
+
+        <div class="badges" aria-label="Project metadata">
+        <span class="badge badge-primary">{p.type}</span>
+        <span class="badge badge-primary">{p.platform}</span>
+          </div>
+          </div>
+
+          <p class="card-desc">{p.description}</p>
+
+          <ul class="list compact" aria-label="Highlights">
+            {p.highlights.map((h) => <li>{h}</li>)}
+          </ul>
+
+       <div class="card-links" role="group" aria-label="Project links">
+          {p.links.map((l, index) => (
+          <a
+        class={`btn card-btn ${index === 0 ? "" : "secondary"}`}
+        href={l.href}
+        target={l.href.startsWith("http") ? "_blank" : undefined}
+        rel={l.href.startsWith("http") ? "noreferrer" : undefined}>
+        {l.label}
+        </a>
+        ))}
+        </div>
+        </article>
+      );
+    })}
+  </div>
+</section>
