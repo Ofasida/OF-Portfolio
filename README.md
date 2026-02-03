@@ -5,7 +5,7 @@ This repository contains the source code for my personal portfolio website.
 The site showcases my work as a **Web Developer and Digital Accessibility Specialist**, including professional projects, accessibility-focused case studies, and public-facing initiatives related to inclusive design and assistive technology.
 
 ## 🌐 Live Site
-[[https://yourdomain.com](https://yourdomain.com)](https://olamidefasida.com/)
+(https://olamidefasida.com/)
 
 ## What’s Included
 - Featured professional projects and case studies  
