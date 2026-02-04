@@ -154,12 +154,23 @@ a:hover { border-bottom-color: var(--accent-secondary-hover); }
   border-top: 1px solid var(--border-subtle);
 }
 
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+/* =========================
+   Section Intro Alignment
+========================= */
+
+/* Stack header content ONLY when needed (doesn't affect other sections) */
+.section-head.section-head-stack {
+  flex-direction: column;
+  align-items: flex-start;   /* keeps title + intro aligned left */
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Make sure the intro behaves like a normal block */
+.section-head.section-head-stack .section-intro {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 100%; /* keep your readable line length */
 }
 
 .muted { color: var(--text-muted); }
@@ -237,29 +248,63 @@ a:hover { border-bottom-color: var(--accent-secondary-hover); }
 /* =========================
    Hero Section
 ========================= */
-.hero { padding: 48px 24px 24px; }
+.hero { 
+  position: relative;
+  padding-block: clamp(72px, 14vh, 140px);
+  padding-inline: clamp(16px, 4vw, 32px);
+}
 
 .hero-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 6.5vw, 4.2rem);
+  letter-spacing: -0.03em;
   margin: 0;
   color: var(--text-main);
-  font-weight: 800;
+  font-weight: 900;
+  max-width: 14ch;
 }
 
 .hero-sub {
-  max-width: 72ch;
-  margin: 16px 0 0;
-  color: var(--text-muted);
-  font-size: 1.05rem;
+ max-width: 70ch;
+  margin-top: 32px;
+  font-size: clamp(1.15rem, 2vw, 1.35rem); /* noticeably larger */
+  line-height: 1.8;                        /* airy, premium */
+  font-weight: 450;                       /* calm confidence */
+  color: rgba(0, 0, 0, 0.78);
 }
 
 .hero-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 16px;
+  margin-top: 44px;
   align-items: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(34,139,34,0.4),
+    transparent
+  );
+}
+
+/* =========================
+   Hero Buttons - larger & more impactful
+========================= */
+
+.hero .btn {
+  padding: 13px 20px;
+  font-size: 1.25rem;
+  min-height: 46px;
+
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  border-radius: 14px;
 }
 
 /* =========================
@@ -485,11 +530,16 @@ button {
 
 .project-top {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;   /* title stays left */
+  justify-content: flex-start; /* remove space-between weirdness */
+  gap: 10px;
+
+  /* remove these (they cause odd behavior in a column stack) */
+  flex-wrap: nowrap;
+  text-align: left;
 }
+
 
 /* Hover lift for project cards */
 .project-card:hover,
@@ -498,13 +548,26 @@ button {
   box-shadow: 0 14px 28px rgba(0,0,0,0.10);
 }
 
+
+/* Center ONLY the View Site button */
+.project-cta-row{
+  display: flex;
+  justify-content: center;  /* centers the button */
+  width: 100%;              /* makes centering work reliably */
+  margin-top: 10px;
+  margin-bottom: 12px;
+
+}
+
+.project-cta{
+  width: fit-content;       /* button stays natural size */
+}
+
 /* =========================
    Project Badges (Consistent)
 ========================= */
 .badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: none;
 }
 
 .badge {

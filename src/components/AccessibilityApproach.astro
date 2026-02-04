@@ -28,7 +28,7 @@ const pillars = [
   {
     title: "Looking ahead with AI and automation",
     body:
-      "I’m exploring how AI and automation can support accessibility testing and data analysis inhelping teams catch issues earlier and make smarter decisions faster.",
+      "I’m exploring how AI and automation can support accessibility testing and data analysis in helping teams catch issues earlier and make smarter decisions faster.",
     points: [
       "Automated scans as early signals (paired with manual verification)",
       "Analytics-driven usability improvements",
@@ -37,23 +37,34 @@ const pillars = [
   },
 ];
 
+const makeId = (text) =>
+  `pillar-${text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
 ---
 
-<section id="accessibility-approach" class="container section" aria-labelledby="accessibility-title">
-  <div class="section-head">
+<section
+  id="accessibility-approach"
+  class="container section"
+  aria-labelledby="accessibility-title"
+>
+  <!-- Keep section-head for consistency, but add a stack modifier -->
+  <div class="section-head section-head-stack">
     <h2 id="accessibility-title">Accessibility Approach</h2>
-    <p class="muted">{intro}</p>
+    <p class="section-intro">{intro}</p>
   </div>
 
   <div class="grid three">
-    {pillars.map((pillar) => (
-      <article class="card">
-        <h3 class="card-title">{pillar.title}</h3>
-        <p>{pillar.body}</p>
-        <ul class="list">
-          {pillar.points.map((p) => <li>{p}</li>)}
-        </ul>
-      </article>
-    ))}
+    {pillars.map((pillar) => {
+      const pillarId = makeId(pillar.title);
+
+      return (
+        <article class="card" aria-labelledby={pillarId}>
+          <h3 id={pillarId} class="card-title">{pillar.title}</h3>
+          <p>{pillar.body}</p>
+          <ul class="list" aria-label={`${pillar.title} key points`}>
+            {pillar.points.map((p) => <li>{p}</li>)}
+          </ul>
+        </article>
+      );
+    })}
   </div>
 </section>
